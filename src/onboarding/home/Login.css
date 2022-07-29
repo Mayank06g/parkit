@@ -1,0 +1,45 @@
+body {
+  background: rgb(47, 54, 53);
+    /* background: radial-gradient(
+      circle,
+      rgb(145, 144, 163) 0%,
+      rgb(99, 104, 105) 0%,
+      rgb(185, 185, 187) 100%
+    ); */
+  }
+  
+  .container {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+  .container > form {
+    width: 30%;
+    border: 1px solid #bf9797;
+    padding: 20px;
+    border-radius: 5px;
+    background: rgb(243, 173, 173);
+    /* height: 80%; */
+    justify-content: center;
+    align-items: center;
+  }
+  pre {
+    width: 50%;
+    color: #fff;
+    font-size: larger;
+  }
+  
+  button {
+    background: #7eb5e5 !important;
+  }
+  p {
+    color: red;
+  }
+  
+
+  
