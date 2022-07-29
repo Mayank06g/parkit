@@ -19,7 +19,7 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
-
+   
         setIsSubmit(true);
     };
     const navigate = useNavigate();
@@ -35,8 +35,16 @@ const Signup = () => {
         const errors = {};
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{4,8}$/;
+        const nameRegex = /^[A-Za-z]+$/
         if (!values.username) {
             errors.username = "Username is required!";
+        }
+
+        else if (!nameRegex.test(values.username)) {
+            errors.username = 'Enter only alphabets'
+        }
+        else if (values.username.length<3){
+            errors.username='Name must be more than 3 characters'
         }
 
         if (!values.email) {

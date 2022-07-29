@@ -10,6 +10,7 @@ import {
     from 'reactstrap';
     
 const Header = () => {
+    const userData = JSON.parse(localStorage.getItem('userData'));
     return (
         <div>
              
@@ -39,6 +40,7 @@ const Header = () => {
                             </NavLink>
                         </NavItem>
                     </Nav>
+                    {userData.islogin}
                     <Nav>
                         <NavItem>
                             <NavLink href="/signupus">

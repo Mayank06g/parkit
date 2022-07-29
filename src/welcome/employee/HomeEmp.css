@@ -1,5 +1,5 @@
 body {
-    background: rgb(47, 54, 53);
+    background: rgb(149, 187, 193);
       /* background: radial-gradient(
         circle,
         rgb(145, 144, 163) 0%,
@@ -23,7 +23,7 @@ body {
       border: 1px solid #bf9797;
       padding: 20px;
       border-radius: 5px;
-      background: rgb(243, 173, 173);
+      background: rgba(90, 202, 227, 0.878);
       /* height: 80%; */
       justify-items: center;
       align-items: center;

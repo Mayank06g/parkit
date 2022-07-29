@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import './HomeEmp.css';
-import { FormGroup, Label, Input } from 'reactstrap'
+import { FormGroup, Label, Input, Alert } from 'reactstrap'
+import { useNavigate } from "react-router-dom";
 const Emp = () => {
 
 
@@ -27,22 +28,36 @@ const Emp = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+        
     };
+    console.log(formValues)
+    const navigate = useNavigate();
     useEffect(() => {
-        console.log(formErrors);
+        console.log( 'dsdsd',formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
 
-            alert('done')
+           alert("Done")
             console.log(formValues);
         }
     }, [formErrors]);
 
-    const [userName] = useState('kohler')
+
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+ 
     const validate = (values) => {
+        const regex = /^[A-Za-z]+$/
+        const VehicleNum = /^[a-zA-Z0-9 ]*$/
         const errors = {};
 
         if (!values.name) {
             errors.name = "Name is required!";
+        }else if(!regex.test(values.name)){
+            errors.name = 'Enter only alphabets '
+
+        }
+        else if (values.name.length<3){
+            errors.name='Name must be more than 3 characters'
         }
         if (!values.empid) {
             errors.empid = "Employee Id is required";
@@ -52,13 +67,19 @@ const Emp = () => {
         }
         if (!values.vehiclenumber) {
             errors.vehiclenumber = "Vehicle Number is required";
+        
         }
+        // else if (!VehicleNum.test(values.vehiclenumber)){
+        //     errors.vehiclenumber='Plese'
+
+        // }
         if (!values.description) {
             errors.description = "Description is required";
         }
         if (!values.startdate) {
             errors.startdate = "Start Date is required";
         }
+        
         if (!values.enddate) {
             errors.enddate = "End Date is required";
         }
@@ -68,8 +89,10 @@ const Emp = () => {
     return (
         <div className="container">
 
+<h1> Welcome {userData.email}</h1>
+
             <form onSubmit={handleSubmit}>
-                <h1> Welcome {userName}</h1>
+               
                 <div className="ui divider"></div>
                 <div className="ui form">
 

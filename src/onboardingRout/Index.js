@@ -3,6 +3,7 @@ import About from '../onboarding/aboutus/About';
 import Contact from '../onboarding/contactus/Contact';
 import Login from '../onboarding/home/Login';
 import Signup from '../onboarding/signup/SignUp';
+import Com from '../welcome/employee/Comp';
 import Emp from '../welcome/employee/HomeEmp';
 
 const AppRoutes=()=>{
@@ -14,6 +15,7 @@ const AppRoutes=()=>{
             <Route path="aboutus" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path='welcome/Emp' element ={<Emp/>} />
+            <Route path='Comp/Emp' element ={<Com/>} />
         </Routes>
       
     </BrowserRouter> 
