@@ -13,7 +13,7 @@ const Header = () => {
     const userData = JSON.parse(localStorage.getItem('userData'));
     return (
         <div>
-             
+            
             <Navbar
                 color="light"
                 expand="md"
@@ -40,7 +40,6 @@ const Header = () => {
                             </NavLink>
                         </NavItem>
                     </Nav>
-                    {userData.islogin}
                     <Nav>
                         <NavItem>
                             <NavLink href="/signupus">
